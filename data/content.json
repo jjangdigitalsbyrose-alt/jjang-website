@@ -7,31 +7,134 @@
     "gumroad": ""
   },
   "about": {
-    "bio": "I'm Annie Rose, a Virtual Assistant and digital creator. I hold a Juris Doctor degree and have worked in administrative roles that involved bookkeeping, records and documentation. I also run Jjang Digitals by Rose, where I design and sell planners, calendars and templates. I like clear systems, tidy files and communication that is easy to follow. (Edit this text in the admin dashboard.)",
-    "education": "Juris Doctor (add school and year in the admin dashboard)",
-    "experience": "Administrative work, bookkeeping, and records and documentation handling. Owner of Jjang Digitals by Rose. (Add roles and dates in the admin dashboard.)",
-    "skills": "Attention to detail, Organization, Written communication, Documentation and research, Time management, Adaptability, Willingness to learn new systems"
+    "photo": "/annie.png",
+    "bio": "Hello, I'm Annie Rose, a detail-oriented Virtual Assistant and digital creator. I'm a Juris Doctor graduate with experience in administrative support, documentation, records management and bookkeeping assistance, plus legal research and documentation work.\n\nI'm currently in Intermediate Virtual Assistant training at The VA Bar, and I run my own digital products shop, Jjang Digitals by Rose. I enjoy organizing information, preparing and reviewing documents, and keeping things accurate and easy to follow. I'm adaptable and always happy to learn new systems.",
+    "education": "Juris Doctor\nJose Rizal University Law School, 2022-2026\n\nBSBA Major in Management, Cum Laude\nJose Rizal University, 2018-2022\n\nIntermediate Virtual Assistant Training (ongoing)\nThe VA Bar, 2026-present",
+    "experience": "Administrative Staff, Agonoy Manpower Services (2024-2025)\nDaily office support, employee records, hiring and contract documentation, inquiries, receipts and proposals.\n\nBookkeeper, MLAtienza Transport (2018-2021)\nEncoded and organized receipts and transactions, kept journal records, prepared documents for quarterly reporting.\n\nOwner, Jjang Digitals by Rose\nDesigning and selling digital products, and running the shop's social media.",
+    "skills": "Attention to detail, Organization, Written communication, Legal research and documentation, Records management, Time management, Client communication, Microsoft Office, Willingness to learn new systems"
   },
   "services": [
-    {"category": "Administrative Virtual Assistance", "title": "Data entry and spreadsheets", "description": "Accurate data entry plus clean, easy-to-use Google Sheets and Excel files."},
-    {"category": "Administrative Virtual Assistance", "title": "Email and calendar management", "description": "Inbox sorting, replies, scheduling and reminders so nothing slips."},
-    {"category": "Administrative Virtual Assistance", "title": "Documents, files and research", "description": "Document preparation, file organization, online research and general admin support."},
-    {"category": "Social Media Management", "title": "Content and captions", "description": "Content calendars, caption writing and promotional graphics for your brand."},
-    {"category": "Social Media Management", "title": "Scheduling and community", "description": "Post scheduling, replying to comments and customer inquiries."},
-    {"category": "Social Media Management", "title": "Basic analytics and reports", "description": "Simple monthly reports showing what worked and what to try next."}
+    {
+      "category": "Administrative Virtual Assistance",
+      "title": "Data entry and spreadsheets",
+      "description": "Accurate data entry plus clean, easy-to-use Google Sheets and Excel files."
+    },
+    {
+      "category": "Administrative Virtual Assistance",
+      "title": "Email and calendar management",
+      "description": "Inbox sorting, replies, scheduling and reminders so nothing slips."
+    },
+    {
+      "category": "Administrative Virtual Assistance",
+      "title": "Documents, files and research",
+      "description": "Document preparation, file organization, online research and general admin support."
+    },
+    {
+      "category": "Social Media Management",
+      "title": "Content and captions",
+      "description": "Content calendars, caption writing and promotional graphics for your brand."
+    },
+    {
+      "category": "Social Media Management",
+      "title": "Scheduling and community",
+      "description": "Post scheduling, replying to comments and customer inquiries."
+    },
+    {
+      "category": "Social Media Management",
+      "title": "Basic analytics and reports",
+      "description": "Simple monthly reports showing what worked and what to try next."
+    }
   ],
   "projects": [
-    {"title": "Jjang Digitals by Rose", "kind": "Real", "category": "Business case study", "description": "My own digital products shop: product design, listing, social media and customer inquiries.", "tools": "Canva, Gumroad, Instagram", "role": "Everything: design, listings, content and customer care.", "results": "", "image": ""},
-    {"title": "Small business expense tracker", "kind": "Sample", "category": "Administrative", "description": "Demonstration Google Sheets tracker for sales and expenses. Not a client project.", "tools": "Google Sheets", "role": "Built the layout and formulas.", "results": "", "image": ""},
-    {"title": "Monthly content calendar", "kind": "Sample", "category": "Social media", "description": "Demonstration calendar with captions and post ideas. Not a client project.", "tools": "Canva, Google Sheets", "role": "Planned posts and wrote captions.", "results": "", "image": ""}
+    {
+      "title": "Jjang Digitals by Rose",
+      "kind": "Real",
+      "category": "Business case study",
+      "description": "My own digital products shop: product design, listing, social media and customer inquiries.",
+      "tools": "Canva, Gumroad, Instagram",
+      "role": "Everything: design, listings, content and customer care.",
+      "results": "",
+      "image": ""
+    },
+    {
+      "title": "Small business expense tracker",
+      "kind": "Sample",
+      "category": "Administrative",
+      "description": "Demonstration Google Sheets tracker for sales and expenses. Not a client project.",
+      "tools": "Google Sheets",
+      "role": "Built the layout and formulas.",
+      "results": "",
+      "image": ""
+    },
+    {
+      "title": "Monthly content calendar",
+      "kind": "Sample",
+      "category": "Social media",
+      "description": "Demonstration calendar with captions and post ideas. Not a client project.",
+      "tools": "Canva, Google Sheets",
+      "role": "Planned posts and wrote captions.",
+      "results": "",
+      "image": ""
+    }
   ],
   "products": [
-    {"id": "sample-2027-calendar", "title": "2027 Printable Calendar (Sample)", "type": "digital", "category": "2027 calendars", "price": 199, "description": "Sample product. Replace with your real calendar.", "details": "Printable PDF. Sample details.", "image": "", "gumroadUrl": "", "variants": "", "stock": 99},
-    {"id": "sample-weekly-planner", "title": "Weekly Planner (Sample)", "type": "digital", "category": "Digital planners", "price": 149, "description": "Sample product. Replace with your real planner.", "details": "Digital planner. Sample details.", "image": "", "gumroadUrl": "", "variants": "", "stock": 99},
-    {"id": "sample-sticker-sheet", "title": "Sticker Sheet (Sample)", "type": "physical", "category": "Stationery", "price": 120, "description": "Sample physical product. Replace with your real item.", "details": "Sample details.", "image": "", "gumroadUrl": "", "variants": "Pastel, Neutral", "stock": 10},
-    {"id": "sample-notebook", "title": "Notebook (Sample)", "type": "physical", "category": "Stationery", "price": 250, "description": "Sample physical product. Replace with your real item.", "details": "Sample details.", "image": "", "gumroadUrl": "", "variants": "A5, A6", "stock": 0}
+    {
+      "id": "sample-2027-calendar",
+      "title": "2027 Printable Calendar (Sample)",
+      "type": "digital",
+      "category": "2027 calendars",
+      "price": 199,
+      "description": "Sample product. Replace with your real calendar.",
+      "details": "Printable PDF. Sample details.",
+      "image": "",
+      "gumroadUrl": "",
+      "variants": "",
+      "stock": 99
+    },
+    {
+      "id": "sample-weekly-planner",
+      "title": "Weekly Planner (Sample)",
+      "type": "digital",
+      "category": "Digital planners",
+      "price": 149,
+      "description": "Sample product. Replace with your real planner.",
+      "details": "Digital planner. Sample details.",
+      "image": "",
+      "gumroadUrl": "",
+      "variants": "",
+      "stock": 99
+    },
+    {
+      "id": "sample-sticker-sheet",
+      "title": "Sticker Sheet (Sample)",
+      "type": "physical",
+      "category": "Stationery",
+      "price": 120,
+      "description": "Sample physical product. Replace with your real item.",
+      "details": "Sample details.",
+      "image": "",
+      "gumroadUrl": "",
+      "variants": "Pastel, Neutral",
+      "stock": 10
+    },
+    {
+      "id": "sample-notebook",
+      "title": "Notebook (Sample)",
+      "type": "physical",
+      "category": "Stationery",
+      "price": 250,
+      "description": "Sample physical product. Replace with your real item.",
+      "details": "Sample details.",
+      "image": "",
+      "gumroadUrl": "",
+      "variants": "A5, A6",
+      "stock": 0
+    }
   ],
   "testimonials": [
-    {"quote": "Sample testimonial. Replace with a real client review.", "name": "Sample client"}
+    {
+      "quote": "Sample testimonial. Replace with a real client review.",
+      "name": "Sample client"
+    }
   ]
 }

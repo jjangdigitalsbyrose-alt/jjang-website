@@ -27,6 +27,7 @@ collections:
             name: about
             widget: object
             fields:
+              - {label: Photo, name: photo, widget: image, required: false}
               - {label: Biography, name: bio, widget: text}
               - {label: Education, name: education, widget: text}
               - {label: Work experience, name: experience, widget: text}

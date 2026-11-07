@@ -33,7 +33,7 @@ nav{display:flex;gap:22px;align-items:center}nav a{text-decoration:none;font-siz
 .card .b{padding:16px;display:flex;flex-direction:column;gap:6px;flex:1}.card .b p{margin:0;font-size:.95rem}
 .ph,.card img,.pd img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
 .ph{background:var(--sand);color:var(--taupe);display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;font:italic 1.2rem var(--serif)}
-.tag{font-size:.8rem;color:var(--taupe)}.tag.sample{color:#8a5a3b}.price{font-weight:500}
+.pre{white-space:pre-line}.tag{font-size:.8rem;color:var(--taupe)}.tag.sample{color:#8a5a3b}.price{font-weight:500}
 .shopband{background:var(--sand);border-top:1px solid var(--line)}
 .two{display:grid;gap:40px;grid-template-columns:1fr 1fr}@media(max-width:800px){.two{grid-template-columns:1fr}}
 .tabs{display:flex;gap:10px;margin:0 0 24px;flex-wrap:wrap}.tabs a{padding:6px 16px;border:1px solid var(--line);text-decoration:none}.tabs a.on{background:var(--cocoa);color:var(--bone)}
@@ -87,7 +87,7 @@ home(){const dg=D.products.filter(p=>p.type==='digital').slice(0,3),ph=D.product
 <section class="s"><h2>Why work with me</h2><div class="grid">${['Detail first: records, spreadsheets and documents checked twice.','Clear writing: replies and captions that read well.','Organized systems: trackers and calendars you can follow.','Honest scope: I tell you what I can and cannot do.'].map(t=>`<div class="card"><div class="b"><p>${t}</p></div></div>`).join('')}</div></section>
 <section class="s"><h2>Kind words</h2><div class="grid">${D.testimonials.map(t=>`<div class="card"><div class="b"><p>“${esc(t.quote)}”</p><span class="tag">${esc(t.name)}</span></div></div>`).join('')}</div></section>
 <section class="s"><h2>Let's talk</h2><p class="links">${links()}</p><a class="btn" href="#/contact">Send an inquiry</a></section>`},
-about(){const a=D.about;return `<section class="s two" style="border:0"><div><div class="ph" style="aspect-ratio:3/4">Your photo here</div></div><div><h1>About me</h1><p>${esc(a.bio)}</p><h3>Education</h3><p>${esc(a.education)}</p><h3>Work experience</h3><p>${esc(a.experience)}</p><h3>Strengths</h3><p>${esc(a.skills)}</p><a class="btn" href="#/contact/va">Work with me</a></div></section>`},
+about(){const a=D.about;return `<section class="s two" style="border:0"><div>${a.photo?`<img src="${esc(a.photo)}" alt="Annie Rose" style="width:100%;aspect-ratio:3/4;object-fit:cover">`:`<div class="ph" style="aspect-ratio:3/4">Your photo here</div>`}</div><div><h1>About me</h1><p class="pre">${esc(a.bio)}</p><h3>Education</h3><p class="pre">${esc(a.education)}</p><h3>Work experience</h3><p class="pre">${esc(a.experience)}</p><h3>Strengths</h3><p class="pre">${esc(a.skills)}</p><a class="btn" href="#/contact/va">Work with me</a></div></section>`},
 services(){return `<section class="s" style="border:0"><h1>VA services</h1>${svc(D.services)}</section>`},
 portfolio(){return `<section class="s" style="border:0"><h1>Portfolio</h1><p>Real projects are labeled as real. Demonstration samples are made to show my skills and are not client work.</p><div class="grid">${D.projects.map(projectCard).join('')}</div></section>`},
 shop(t){t=t||'all';const l=D.products.filter(p=>t==='all'||p.type===t);const cats=[...new Set(l.map(p=>p.category))];return `<section class="s" style="border:0"><h1>Jjang Digitals by Rose</h1><p>Planners, calendars, templates and more, made by Annie Rose.</p>
