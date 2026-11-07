@@ -1,0 +1,73 @@
+backend:
+  name: github
+  repo: YOUR-GITHUB-USERNAME/YOUR-REPO-NAME   # change this
+  branch: main
+  base_url: https://YOUR-OAUTH-WORKER.workers.dev   # see README step 4
+media_folder: images
+public_folder: /images
+collections:
+  - name: site
+    label: Website content
+    files:
+      - name: content
+        label: All content
+        file: data/content.json
+        format: json
+        fields:
+          - label: Contact and links
+            name: site
+            widget: object
+            fields:
+              - {label: Email, name: email, widget: string, required: false}
+              - {label: Facebook link, name: facebook, widget: string, required: false}
+              - {label: Instagram link, name: instagram, widget: string, required: false}
+              - {label: LinkedIn link, name: linkedin, widget: string, required: false}
+              - {label: Gumroad profile link, name: gumroad, widget: string, required: false}
+          - label: About me
+            name: about
+            widget: object
+            fields:
+              - {label: Biography, name: bio, widget: text}
+              - {label: Education, name: education, widget: text}
+              - {label: Work experience, name: experience, widget: text}
+              - {label: Skills (comma separated), name: skills, widget: text}
+          - label: VA services
+            name: services
+            widget: list
+            fields:
+              - {label: Category, name: category, widget: select, options: ["Administrative Virtual Assistance", "Social Media Management"]}
+              - {label: Title, name: title, widget: string}
+              - {label: Description, name: description, widget: text}
+          - label: Portfolio projects
+            name: projects
+            widget: list
+            fields:
+              - {label: Title, name: title, widget: string}
+              - {label: Real project or sample, name: kind, widget: select, options: ["Real", "Sample"]}
+              - {label: Category, name: category, widget: string}
+              - {label: Description, name: description, widget: text}
+              - {label: Tools used, name: tools, widget: string, required: false}
+              - {label: My responsibilities, name: role, widget: text, required: false}
+              - {label: Results (only real data), name: results, widget: text, required: false}
+              - {label: Image, name: image, widget: image, required: false}
+          - label: Products
+            name: products
+            widget: list
+            fields:
+              - {label: ID (lowercase, no spaces, unique), name: id, widget: string}
+              - {label: Name, name: title, widget: string}
+              - {label: Type, name: type, widget: select, options: ["digital", "physical"]}
+              - {label: Category, name: category, widget: string}
+              - {label: Price (PHP), name: price, widget: number}
+              - {label: Description, name: description, widget: text}
+              - {label: Product details, name: details, widget: text, required: false}
+              - {label: Photo, name: image, widget: image, required: false}
+              - {label: Gumroad product link (digital only), name: gumroadUrl, widget: string, required: false}
+              - {label: Variations (comma separated, physical only), name: variants, widget: string, required: false}
+              - {label: Stock (0 = sold out), name: stock, widget: number}
+          - label: Testimonials
+            name: testimonials
+            widget: list
+            fields:
+              - {label: Quote, name: quote, widget: text}
+              - {label: Name, name: name, widget: string}

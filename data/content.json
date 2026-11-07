@@ -1,0 +1,37 @@
+{
+  "site": {
+    "email": "",
+    "facebook": "",
+    "instagram": "",
+    "linkedin": "",
+    "gumroad": ""
+  },
+  "about": {
+    "bio": "I'm Annie Rose, a Virtual Assistant and digital creator. I hold a Juris Doctor degree and have worked in administrative roles that involved bookkeeping, records and documentation. I also run Jjang Digitals by Rose, where I design and sell planners, calendars and templates. I like clear systems, tidy files and communication that is easy to follow. (Edit this text in the admin dashboard.)",
+    "education": "Juris Doctor (add school and year in the admin dashboard)",
+    "experience": "Administrative work, bookkeeping, and records and documentation handling. Owner of Jjang Digitals by Rose. (Add roles and dates in the admin dashboard.)",
+    "skills": "Attention to detail, Organization, Written communication, Documentation and research, Time management, Adaptability, Willingness to learn new systems"
+  },
+  "services": [
+    {"category": "Administrative Virtual Assistance", "title": "Data entry and spreadsheets", "description": "Accurate data entry plus clean, easy-to-use Google Sheets and Excel files."},
+    {"category": "Administrative Virtual Assistance", "title": "Email and calendar management", "description": "Inbox sorting, replies, scheduling and reminders so nothing slips."},
+    {"category": "Administrative Virtual Assistance", "title": "Documents, files and research", "description": "Document preparation, file organization, online research and general admin support."},
+    {"category": "Social Media Management", "title": "Content and captions", "description": "Content calendars, caption writing and promotional graphics for your brand."},
+    {"category": "Social Media Management", "title": "Scheduling and community", "description": "Post scheduling, replying to comments and customer inquiries."},
+    {"category": "Social Media Management", "title": "Basic analytics and reports", "description": "Simple monthly reports showing what worked and what to try next."}
+  ],
+  "projects": [
+    {"title": "Jjang Digitals by Rose", "kind": "Real", "category": "Business case study", "description": "My own digital products shop: product design, listing, social media and customer inquiries.", "tools": "Canva, Gumroad, Instagram", "role": "Everything: design, listings, content and customer care.", "results": "", "image": ""},
+    {"title": "Small business expense tracker", "kind": "Sample", "category": "Administrative", "description": "Demonstration Google Sheets tracker for sales and expenses. Not a client project.", "tools": "Google Sheets", "role": "Built the layout and formulas.", "results": "", "image": ""},
+    {"title": "Monthly content calendar", "kind": "Sample", "category": "Social media", "description": "Demonstration calendar with captions and post ideas. Not a client project.", "tools": "Canva, Google Sheets", "role": "Planned posts and wrote captions.", "results": "", "image": ""}
+  ],
+  "products": [
+    {"id": "sample-2027-calendar", "title": "2027 Printable Calendar (Sample)", "type": "digital", "category": "2027 calendars", "price": 199, "description": "Sample product. Replace with your real calendar.", "details": "Printable PDF. Sample details.", "image": "", "gumroadUrl": "", "variants": "", "stock": 99},
+    {"id": "sample-weekly-planner", "title": "Weekly Planner (Sample)", "type": "digital", "category": "Digital planners", "price": 149, "description": "Sample product. Replace with your real planner.", "details": "Digital planner. Sample details.", "image": "", "gumroadUrl": "", "variants": "", "stock": 99},
+    {"id": "sample-sticker-sheet", "title": "Sticker Sheet (Sample)", "type": "physical", "category": "Stationery", "price": 120, "description": "Sample physical product. Replace with your real item.", "details": "Sample details.", "image": "", "gumroadUrl": "", "variants": "Pastel, Neutral", "stock": 10},
+    {"id": "sample-notebook", "title": "Notebook (Sample)", "type": "physical", "category": "Stationery", "price": 250, "description": "Sample physical product. Replace with your real item.", "details": "Sample details.", "image": "", "gumroadUrl": "", "variants": "A5, A6", "stock": 0}
+  ],
+  "testimonials": [
+    {"quote": "Sample testimonial. Replace with a real client review.", "name": "Sample client"}
+  ]
+}

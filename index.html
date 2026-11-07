@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Annie Rose | Virtual Assistant and Jjang Digitals by Rose</title>
+<meta name="description" content="Annie Rose is a Virtual Assistant and digital creator. Shop planners, calendars and templates at Jjang Digitals by Rose.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--bone:#F6F0E6;--sand:#E7DCCB;--taupe:#8A7968;--cocoa:#4A3A2E;--sage:#8C9A84;--line:#d9ccb9;--serif:'Instrument Serif',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bone);color:var(--cocoa);font:16px/1.65 var(--sans)}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.1;margin:0 0 .5em}
+h1{font-size:clamp(2.6rem,8vw,5rem)}h2{font-size:clamp(1.9rem,4.5vw,2.8rem)}h3{font-size:1.5rem}
+a{color:inherit}p{margin:0 0 1em;max-width:62ch}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+section.s{padding:64px 0;border-top:1px solid var(--line)}
+header{position:sticky;top:0;background:var(--bone);border-bottom:1px solid var(--line);z-index:5}
+.bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:var(--serif);font-size:1.6rem;text-decoration:none}
+nav{display:flex;gap:22px;align-items:center}nav a{text-decoration:none;font-size:.95rem}nav a:hover,nav a.on{text-decoration:underline;text-underline-offset:6px}
+.dd{position:relative}.dd div{display:none;position:absolute;top:100%;left:-12px;background:var(--bone);border:1px solid var(--line);padding:10px 14px;min-width:170px}
+.dd:hover div,.dd:focus-within div{display:block}.dd div a{display:block;padding:4px 0}
+#menu{display:none;background:none;border:1px solid var(--line);padding:6px 12px;font:inherit;color:inherit}
+@media(max-width:800px){#menu{display:block}nav{display:none;position:absolute;top:64px;left:0;right:0;background:var(--bone);flex-direction:column;align-items:flex-start;padding:16px 20px;border-bottom:1px solid var(--line)}nav.open{display:flex}.dd div{display:block;position:static;border:0;padding:0 0 0 12px}}
+.btn{display:inline-block;background:var(--cocoa);color:var(--bone);border:1px solid var(--cocoa);padding:11px 22px;font:500 .95rem var(--sans);text-decoration:none;cursor:pointer}
+.btn.alt{background:transparent;color:var(--cocoa)}.btn.shop{background:var(--sage);border-color:var(--sage);color:#26301f}
+.btn[disabled],.btn.off{opacity:.45;cursor:not-allowed}
+.hero{padding:88px 0 72px}.hero p{font-size:1.15rem}.hero .row{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.hero h1 span{display:block;color:var(--taupe);font-style:italic}
+.grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.card{background:#fbf8f2;border:1px solid var(--line);display:flex;flex-direction:column}
+.card .b{padding:16px;display:flex;flex-direction:column;gap:6px;flex:1}.card .b p{margin:0;font-size:.95rem}
+.ph,.card img,.pd img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.ph{background:var(--sand);color:var(--taupe);display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;font:italic 1.2rem var(--serif)}
+.tag{font-size:.8rem;color:var(--taupe)}.tag.sample{color:#8a5a3b}.price{font-weight:500}
+.shopband{background:var(--sand);border-top:1px solid var(--line)}
+.two{display:grid;gap:40px;grid-template-columns:1fr 1fr}@media(max-width:800px){.two{grid-template-columns:1fr}}
+.tabs{display:flex;gap:10px;margin:0 0 24px;flex-wrap:wrap}.tabs a{padding:6px 16px;border:1px solid var(--line);text-decoration:none}.tabs a.on{background:var(--cocoa);color:var(--bone)}
+label{display:block;font-size:.9rem;margin:12px 0 4px}input,select,textarea{width:100%;padding:10px;border:1px solid var(--taupe);background:#fffdf9;font:inherit;color:inherit}
+.f{max-width:520px}.note{background:var(--sand);padding:12px 16px;font-size:.9rem;margin:16px 0;max-width:62ch}
+table{width:100%;border-collapse:collapse}td,th{padding:10px 6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:middle}
+.qty{display:inline-flex;align-items:center;gap:8px}.qty button{width:30px;height:30px;border:1px solid var(--taupe);background:none;cursor:pointer;color:inherit}
+.links a{margin-right:18px}footer{border-top:1px solid var(--line);padding:32px 0;font-size:.9rem;color:var(--taupe)}
+.cartlink{position:relative}.cartlink b{background:var(--sage);color:#26301f;border-radius:10px;font-size:.75rem;padding:1px 7px;margin-left:4px}
+:focus-visible{outline:2px solid var(--cocoa);outline-offset:2px}
+#app{animation:in .4s ease}@keyframes in{from{opacity:0}to{opacity:1}}@media(prefers-reduced-motion:reduce){#app{animation:none}}
+</style></head><body>
+<header><div class="wrap bar">
+<a class="logo" href="#/home">Annie Rose</a>
+<button id="menu" aria-label="Menu">Menu</button>
+<nav id="nav" aria-label="Main">
+<a href="#/home">Home</a><a href="#/about">About</a><a href="#/services">VA Services</a><a href="#/portfolio">Portfolio</a>
+<span class="dd"><a href="#/shop/all">Shop</a><div><a href="#/shop/digital">Digital Products</a><a href="#/shop/physical">Physical Products</a></div></span>
+<a href="#/contact">Contact</a><a class="cartlink" href="#/cart" aria-label="Shopping cart">Cart<b id="count">0</b></a>
+</nav></div></header>
+<main id="app" class="wrap"></main>
+<footer><div class="wrap">Annie Rose, Virtual Assistant and digital creator. Shop: Jjang Digitals by Rose.</div></footer>
+<script>
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const php=n=>'₱'+Number(n).toLocaleString('en-PH');
+let D=null,cart=[];
+try{cart=JSON.parse(localStorage.getItem('cart')||'[]')}catch(e){}
+const save=()=>{try{localStorage.setItem('cart',JSON.stringify(cart))}catch(e){}$('#count').textContent=cart.reduce((a,c)=>a+c.qty,0)};
+const vars=p=>String(p.variants||'').split(',').map(s=>s.trim()).filter(Boolean);
+const find=id=>D.products.find(p=>p.id===id);
+const tile=p=>p.image?`<img src="${esc(p.image)}" alt="${esc(p.title)}" loading="lazy">`:`<div class="ph">${esc(p.title)}</div>`;
+const mail=(sub,body)=>D.site.email?`mailto:${encodeURIComponent(D.site.email).replace('%40','@')}?subject=${encodeURIComponent(sub)}&body=${encodeURIComponent(body)}`:'';
+const links=()=>['email','facebook','instagram','linkedin'].filter(k=>D.site[k]).map(k=>`<a href="${k=='email'?'mailto:':''}${esc(D.site[k])}" ${k=='email'?'':'target="_blank" rel="noopener"'}>${k[0].toUpperCase()+k.slice(1)}</a>`).join('')||'<span class="tag">Contact links are not set yet. Add them in the admin dashboard.</span>';
+
+function productCard(p){
+ const out=p.type==='physical'&&Number(p.stock)<=0;
+ return `<a class="card" href="#/product/${esc(p.id)}" style="text-decoration:none">${tile(p)}<div class="b"><span class="tag">${esc(p.category)}${out?' · Sold out':''}</span><h3>${esc(p.title)}</h3><p>${esc(p.description)}</p><span class="price">${php(p.price)}</span></div></a>`}
+function projectCard(p){return `<div class="card">${p.image?`<img src="${esc(p.image)}" alt="${esc(p.title)}" loading="lazy">`:`<div class="ph">${esc(p.title)}</div>`}<div class="b"><span class="tag ${p.kind==='Sample'?'sample':''}">${p.kind==='Real'?'Real project':'Demonstration sample'} · ${esc(p.category)}</span><h3>${esc(p.title)}</h3><p>${esc(p.description)}</p>${p.tools?`<p class="tag">Tools: ${esc(p.tools)}</p>`:''}${p.role?`<p class="tag">My role: ${esc(p.role)}</p>`:''}${p.results?`<p class="tag">Results: ${esc(p.results)}</p>`:''}</div></div>`}
+const svc=list=>['Administrative Virtual Assistance','Social Media Management'].map(c=>`<h3>${c}</h3><div class="grid" style="margin-bottom:36px">${list.filter(s=>s.category===c).map(s=>`<div class="card"><div class="b"><h3>${esc(s.title)}</h3><p>${esc(s.description)}</p><a class="btn alt" style="margin-top:10px;align-self:flex-start" href="#/contact/va">Inquire</a></div></div>`).join('')}</div>`).join('');
+
+const V={
+home(){const dg=D.products.filter(p=>p.type==='digital').slice(0,3),ph=D.products.filter(p=>p.type==='physical').slice(0,3);return `
+<section class="hero"><h1>Hello, I'm Annie Rose.<span>Admin support, social media and digital goods.</span></h1>
+<p>Your reliable partner for administrative support, social media management, and creative digital solutions.</p>
+<div class="row"><a class="btn" href="#/portfolio">Explore My Portfolio</a><a class="btn shop" href="#/shop/all">Visit My Shop</a></div></section>
+<section class="s two"><div><h2>Two sides of my work</h2></div><div><p>I work as a Virtual Assistant, handling admin tasks and social media for small businesses. I also run <b>Jjang Digitals by Rose</b>, my shop for planners, calendars, templates and physical goods.</p><a href="#/about">More about me</a></div></section>
+<section class="s"><h2>VA services</h2>${svc(D.services)}<a class="btn" href="#/services">See all services</a></section>
+<section class="s"><h2>Featured projects</h2><div class="grid">${D.projects.slice(0,3).map(projectCard).join('')}</div></section>
+<section class="s shopband" style="margin:0 -20px;padding:64px 20px"><h2>From Jjang Digitals by Rose</h2><h3>Digital products</h3><div class="grid" style="margin-bottom:30px">${dg.map(productCard).join('')}</div><h3>Physical products</h3><div class="grid">${ph.map(productCard).join('')}</div></section>
+<section class="s"><h2>Why work with me</h2><div class="grid">${['Detail first: records, spreadsheets and documents checked twice.','Clear writing: replies and captions that read well.','Organized systems: trackers and calendars you can follow.','Honest scope: I tell you what I can and cannot do.'].map(t=>`<div class="card"><div class="b"><p>${t}</p></div></div>`).join('')}</div></section>
+<section class="s"><h2>Kind words</h2><div class="grid">${D.testimonials.map(t=>`<div class="card"><div class="b"><p>“${esc(t.quote)}”</p><span class="tag">${esc(t.name)}</span></div></div>`).join('')}</div></section>
+<section class="s"><h2>Let's talk</h2><p class="links">${links()}</p><a class="btn" href="#/contact">Send an inquiry</a></section>`},
+about(){const a=D.about;return `<section class="s two" style="border:0"><div><div class="ph" style="aspect-ratio:3/4">Your photo here</div></div><div><h1>About me</h1><p>${esc(a.bio)}</p><h3>Education</h3><p>${esc(a.education)}</p><h3>Work experience</h3><p>${esc(a.experience)}</p><h3>Strengths</h3><p>${esc(a.skills)}</p><a class="btn" href="#/contact/va">Work with me</a></div></section>`},
+services(){return `<section class="s" style="border:0"><h1>VA services</h1>${svc(D.services)}</section>`},
+portfolio(){return `<section class="s" style="border:0"><h1>Portfolio</h1><p>Real projects are labeled as real. Demonstration samples are made to show my skills and are not client work.</p><div class="grid">${D.projects.map(projectCard).join('')}</div></section>`},
+shop(t){t=t||'all';const l=D.products.filter(p=>t==='all'||p.type===t);const cats=[...new Set(l.map(p=>p.category))];return `<section class="s" style="border:0"><h1>Jjang Digitals by Rose</h1><p>Planners, calendars, templates and more, made by Annie Rose.</p>
+<div class="tabs">${['all','digital','physical'].map(x=>`<a class="${x===t?'on':''}" href="#/shop/${x}">${x==='all'?'All products':x[0].toUpperCase()+x.slice(1)+' products'}</a>`).join('')}</div>
+${l.length?cats.map(c=>`<h3>${esc(c)}</h3><div class="grid" style="margin-bottom:32px">${l.filter(p=>p.category===c).map(productCard).join('')}</div>`).join(''):'<p>No products here yet.</p>'}</section>`},
+product(id){const p=find(id);if(!p)return V.notfound();const v=vars(p),phys=p.type==='physical',out=phys&&Number(p.stock)<=0;
+ let buy;
+ if(!phys)buy=p.gumroadUrl?`<a class="btn shop gumroad-button" href="${esc(p.gumroadUrl)}" target="_blank" rel="noopener">Buy on Gumroad</a><p class="tag" style="margin-top:8px">Secure payment and file delivery are handled by Gumroad.</p>`:`<span class="btn shop off">Purchase link coming soon</span>`;
+ else buy=out?`<span class="btn off">Sold out</span>`:`<label>${v.length?'Option':''}</label>${v.length?`<select id="var">${v.map(x=>`<option>${esc(x)}</option>`).join('')}</select>`:''}<label>Quantity</label><input id="q" type="number" min="1" max="${Number(p.stock)}" value="1" style="width:100px"><p class="tag">${Number(p.stock)} in stock</p><button class="btn shop" id="add">Add to cart</button>`;
+ return `<section class="s two" style="border:0"><div class="pd">${tile(p)}</div><div><a href="#/shop/${p.type}">Back to ${p.type} products</a><h1 style="margin-top:12px">${esc(p.title)}</h1><p class="price">${php(p.price)}</p><p>${esc(p.description)}</p><h3>Details</h3><p>${esc(p.details)}</p>${buy}</div></section>`},
+cart(){if(!cart.length)return `<section class="s" style="border:0"><h1>Your cart</h1><p>Your cart is empty.</p><a class="btn shop" href="#/shop/physical">Browse physical products</a></section>`;
+ const sub=cart.reduce((a,c)=>a+c.qty*find(c.id).price,0);
+ return `<section class="s" style="border:0"><h1>Your cart</h1><table>${cart.map((c,i)=>{const p=find(c.id);return `<tr><td>${esc(p.title)}<br><span class="tag">${esc(c.variant)}</span></td><td><span class="qty"><button data-m="${i}" aria-label="Less">−</button>${c.qty}<button data-p="${i}" aria-label="More">+</button></span></td><td>${php(p.price*c.qty)}</td><td><button class="btn alt" data-r="${i}">Remove</button></td></tr>`}).join('')}</table>
+ <h3 style="margin-top:20px">Subtotal: ${php(sub)}</h3><p class="tag">Shipping is not included. I will confirm it with you.</p>
+ <h2 style="margin-top:32px">Send order request</h2><div class="note">This sends an order request only. Your order is not confirmed until I reply with payment instructions.</div>
+ <form class="f" id="co"><label>Name</label><input name="n" required><label>Mobile number</label><input name="ph" required><label>Delivery address</label><textarea name="a" rows="3" required></textarea><label>Notes</label><textarea name="no" rows="2"></textarea><p></p><button class="btn shop">Send order request by email</button></form></section>`},
+contact(t){const o={va:'VA services',digital:'Digital product questions',physical:'Physical product orders',collab:'Business collaboration'};return `<section class="s" style="border:0"><h1>Contact</h1><p class="links">${links()}</p>
+<form class="f" id="ct"><label>What is this about?</label><select name="t">${Object.entries(o).map(([k,v])=>`<option value="${k}" ${k===t?'selected':''}>${v}</option>`).join('')}</select><label>Name</label><input name="n" required><label>Your email</label><input type="email" name="e" required><label>Message</label><textarea name="m" rows="5" required></textarea><p></p><button class="btn">Send by email</button></form>${D.site.email?'':'<div class="note">Email is not set yet, so the form is disabled. Add your email in the admin dashboard.</div>'}</section>`},
+notfound(){return `<section class="s"><h1>Page not found</h1><a href="#/home">Back to home</a></section>`}
+};
+
+function bind(){
+ const add=$('#add');if(add)add.onclick=()=>{const id=location.hash.split('/')[2],p=find(id),v=$('#var')?$('#var').value:'',q=Math.max(1,parseInt($('#q').value)||1);
+  const e=cart.find(c=>c.id===id&&c.variant===v),tot=(e?e.qty:0)+q;if(tot>p.stock){alert('Only '+p.stock+' in stock.');return}
+  e?e.qty=tot:cart.push({id,variant:v,qty:q});save();location.hash='#/cart'};
+ document.querySelectorAll('[data-m],[data-p],[data-r]').forEach(b=>b.onclick=()=>{const d=b.dataset,i=+(d.m??d.p??d.r),c=cart[i];
+  if(d.r!==undefined)cart.splice(i,1);else if(d.m!==undefined){c.qty--;if(c.qty<1)cart.splice(i,1)}else if(c.qty<find(c.id).stock)c.qty++;else alert('No more stock available.');
+  save();render()});
+ const co=$('#co');if(co)co.onsubmit=e=>{e.preventDefault();if(!D.site.email){alert('Email is not set yet. Add it in the admin dashboard.');return}const f=new FormData(co);
+  const lines=cart.map(c=>{const p=find(c.id);return `${c.qty} x ${p.title} ${c.variant?'('+c.variant+')':''} - ${php(p.price*c.qty)}`}).join('\n');
+  location.href=mail('Order request from '+f.get('n'),`${lines}\nSubtotal: ${php(cart.reduce((a,c)=>a+c.qty*find(c.id).price,0))}\n\nName: ${f.get('n')}\nMobile: ${f.get('ph')}\nAddress: ${f.get('a')}\nNotes: ${f.get('no')}`)};
+ const ct=$('#ct');if(ct)ct.onsubmit=e=>{e.preventDefault();if(!D.site.email){alert('Email is not set yet.');return}const f=new FormData(ct);
+  location.href=mail('Inquiry: '+ct.t.selectedOptions[0].text,`${f.get('m')}\n\nFrom: ${f.get('n')} (${f.get('e')})`)};
+ if(document.querySelector('.gumroad-button')){const s=document.createElement('script');s.src='https://gumroad.com/js/gumroad.js';document.body.appendChild(s)}
+}
+function render(){const [,v,a]=(location.hash||'#/home').split('/');const fn=V[v||'home']||V.notfound;
+ $('#app').innerHTML=fn(a);$('#nav').classList.remove('open');
+ document.querySelectorAll('nav a').forEach(x=>x.classList.toggle('on',x.getAttribute('href')==='#/'+(v||'home')));
+ document.title=(v&&v!=='home'?v[0].toUpperCase()+v.slice(1)+' | ':'')+'Annie Rose | Jjang Digitals by Rose';
+ bind();if(!render.first)window.scrollTo(0,0);render.first=0}
+$('#menu').onclick=()=>$('#nav').classList.toggle('open');
+window.addEventListener('hashchange',render);
+fetch('data/content.json').then(r=>r.json()).then(j=>{D=j;cart=cart.filter(c=>find(c.id));save();render()}).catch(()=>{$('#app').innerHTML='<p style="padding:40px 0">Content could not load. Open this site through a web server or your hosted link, not by double-clicking the file.</p>'});
+</script></body></html>
