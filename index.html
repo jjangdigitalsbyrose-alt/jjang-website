@@ -5,7 +5,7 @@
 <title>Annie Rose | Virtual Assistant and Jjang Digitals by Rose</title>
 <meta name="description" content="Annie Rose is a Virtual Assistant and digital creator. Shop planners, calendars and templates at Jjang Digitals by Rose.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&family=DM+Sans:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
 :root{--bone:#F6F0E6;--sand:#E7DCCB;--taupe:#8A7968;--cocoa:#4A3A2E;--sage:#8C9A84;--line:#d9ccb9;--serif:'Instrument Serif',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
@@ -33,7 +33,14 @@ nav{display:flex;gap:22px;align-items:center}nav a{text-decoration:none;font-siz
 .card .b{padding:16px;display:flex;flex-direction:column;gap:6px;flex:1}.card .b p{margin:0;font-size:.95rem}
 .ph,.card img,.pd img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
 .ph{background:var(--sand);color:var(--taupe);display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;font:italic 1.2rem var(--serif)}
-.pre{white-space:pre-line}.tag{font-size:.8rem;color:var(--taupe)}.tag.sample{color:#8a5a3b}.price{font-weight:500}
+.pre{white-space:pre-line}.banner{display:block;width:100%;max-height:280px;object-fit:cover;margin-bottom:24px}.glyph{font:300 clamp(6rem,18vw,9rem)/1 'Noto Sans KR',var(--sans);color:var(--taupe)}.chips span{display:inline-block;border:1px solid var(--taupe);padding:4px 14px;margin:0 8px 8px 0;font-size:.9rem}.band{margin:0 -20px;padding:64px 20px;border-top:0;background:var(--bandc);box-shadow:0 0 0 100vmax var(--bandc);clip-path:inset(0 -100vmax)}
+.band-blush{--bandc:#EFD9D3}.band-sage{--bandc:#DDE3D6}.band-cocoa{--bandc:#4A3A2E;color:var(--bone)}
+.band-cocoa a{color:var(--bone)}.band-cocoa .btn{background:var(--bone);color:var(--cocoa);border-color:var(--bone)}
+.shopband{--bandc:var(--sand);box-shadow:0 0 0 100vmax var(--bandc);clip-path:inset(0 -100vmax)}
+.card{border-top:3px solid #D9A9A3}.shopband .card,.band-blush .card{border-top-color:var(--sage)}
+.hero h1 span{color:#B27E78}
+body{overflow-x:hidden}
+.shoplogo{display:block;max-height:150px;max-width:300px;height:auto;width:auto;margin-bottom:14px}.hero.two{align-items:center}.tag{font-size:.8rem;color:var(--taupe)}.tag.sample{color:#8a5a3b}.price{font-weight:500}
 .shopband{background:var(--sand);border-top:1px solid var(--line)}
 .two{display:grid;gap:40px;grid-template-columns:1fr 1fr}@media(max-width:800px){.two{grid-template-columns:1fr}}
 .tabs{display:flex;gap:10px;margin:0 0 24px;flex-wrap:wrap}.tabs a{padding:6px 16px;border:1px solid var(--line);text-decoration:none}.tabs a.on{background:var(--cocoa);color:var(--bone)}
@@ -67,7 +74,8 @@ const vars=p=>String(p.variants||'').split(',').map(s=>s.trim()).filter(Boolean)
 const find=id=>D.products.find(p=>p.id===id);
 const tile=p=>p.image?`<img src="${esc(p.image)}" alt="${esc(p.title)}" loading="lazy">`:`<div class="ph">${esc(p.title)}</div>`;
 const mail=(sub,body)=>D.site.email?`mailto:${encodeURIComponent(D.site.email).replace('%40','@')}?subject=${encodeURIComponent(sub)}&body=${encodeURIComponent(body)}`:'';
-const links=()=>['email','facebook','instagram','linkedin'].filter(k=>D.site[k]).map(k=>`<a href="${k=='email'?'mailto:':''}${esc(D.site[k])}" ${k=='email'?'':'target="_blank" rel="noopener"'}>${k[0].toUpperCase()+k.slice(1)}</a>`).join('')||'<span class="tag">Contact links are not set yet. Add them in the admin dashboard.</span>';
+const LB={email:'Email',facebook:'Facebook',instagram:'Instagram',tiktok:'TikTok',linkedin:'LinkedIn',linktree:'Linktree',raket:'RaketPH',gumroad:'Gumroad'};
+const links=()=>Object.keys(LB).filter(k=>D.site[k]).map(k=>`<a href="${k=='email'?'mailto:':''}${esc(D.site[k])}" ${k=='email'?'':'target="_blank" rel="noopener"'}>${LB[k]}</a>`).join('')||'<span class="tag">Contact links are not set yet. Add them in the admin dashboard.</span>';
 
 function productCard(p){
  const out=p.type==='physical'&&Number(p.stock)<=0;
@@ -77,34 +85,34 @@ const svc=list=>['Administrative Virtual Assistance','Social Media Management'].
 
 const V={
 home(){const dg=D.products.filter(p=>p.type==='digital').slice(0,3),ph=D.products.filter(p=>p.type==='physical').slice(0,3);return `
-<section class="hero"><h1>Hello, I'm Annie Rose.<span>Admin support, social media and digital goods.</span></h1>
+<div style="padding-top:20px">${D.site.banner?`<img class="banner" src="${esc(D.site.banner)}" alt="" onerror="this.remove()">`:''}</div><section class="hero${D.site.heroImage?' two':''}"><div><h1>Hello, I'm Annie Rose.<span>Admin support, social media and digital goods.</span></h1>
 <p>Your reliable partner for administrative support, social media management, and creative digital solutions.</p>
-<div class="row"><a class="btn" href="#/portfolio">Explore My Portfolio</a><a class="btn shop" href="#/shop/all">Visit My Shop</a></div></section>
+<div class="row"><a class="btn" href="#/portfolio">Explore My Portfolio</a><a class="btn shop" href="#/shop/all">Visit My Shop</a></div></div>${D.site.heroImage?`<img src="${esc(D.site.heroImage)}" alt="" style="width:100%;aspect-ratio:4/5;object-fit:cover" onerror="this.remove()">`:''}</section>
 <section class="s two"><div><h2>Two sides of my work</h2></div><div><p>I work as a Virtual Assistant, handling admin tasks and social media for small businesses. I also run <b>Jjang Digitals by Rose</b>, my shop for planners, calendars, templates and physical goods.</p><a href="#/about">More about me</a></div></section>
-<section class="s"><h2>VA services</h2>${svc(D.services)}<a class="btn" href="#/services">See all services</a></section>
+<section class="s band band-blush"><h2>VA services</h2>${svc(D.services)}<a class="btn" href="#/services">See all services</a></section>
 <section class="s"><h2>Featured projects</h2><div class="grid">${D.projects.slice(0,3).map(projectCard).join('')}</div></section>
-<section class="s shopband" style="margin:0 -20px;padding:64px 20px"><h2>From Jjang Digitals by Rose</h2><h3>Digital products</h3><div class="grid" style="margin-bottom:30px">${dg.map(productCard).join('')}</div><h3>Physical products</h3><div class="grid">${ph.map(productCard).join('')}</div></section>
-<section class="s"><h2>Why work with me</h2><div class="grid">${['Detail first: records, spreadsheets and documents checked twice.','Clear writing: replies and captions that read well.','Organized systems: trackers and calendars you can follow.','Honest scope: I tell you what I can and cannot do.'].map(t=>`<div class="card"><div class="b"><p>${t}</p></div></div>`).join('')}</div></section>
+<section class="s shopband" style="margin:0 -20px;padding:64px 20px">${D.site.logo?`<img class="shoplogo" src="${esc(D.site.logo)}" alt="Jjang Digitals by Rose" onerror="this.remove()">`:''}<h2>From Jjang Digitals by Rose</h2><h3>Digital products</h3><div class="grid" style="margin-bottom:30px">${dg.map(productCard).join('')}</div><h3>Physical products</h3><div class="grid">${ph.map(productCard).join('')}</div></section>
+<section class="s band band-sage"><h2>Why work with me</h2><div class="grid">${['Detail first: records, spreadsheets and documents checked twice.','Clear writing: replies and captions that read well.','Organized systems: trackers and calendars you can follow.','Honest scope: I tell you what I can and cannot do.'].map(t=>`<div class="card"><div class="b"><p>${t}</p></div></div>`).join('')}</div></section>
 <section class="s"><h2>Kind words</h2><div class="grid">${D.testimonials.map(t=>`<div class="card"><div class="b"><p>“${esc(t.quote)}”</p><span class="tag">${esc(t.name)}</span></div></div>`).join('')}</div></section>
-<section class="s"><h2>Let's talk</h2><p class="links">${links()}</p><a class="btn" href="#/contact">Send an inquiry</a></section>`},
+<section class="s band band-cocoa"><h2>Let's talk</h2><p class="links">${links()}</p><a class="btn" href="#/contact">Send an inquiry</a></section>`},
 about(){const a=D.about;return `<section class="s two" style="border:0"><div>${a.photo?`<img src="${esc(a.photo)}" alt="Annie Rose" style="width:100%;aspect-ratio:3/4;object-fit:cover">`:`<div class="ph" style="aspect-ratio:3/4">Your photo here</div>`}</div><div><h1>About me</h1><p class="pre">${esc(a.bio)}</p><h3>Education</h3><p class="pre">${esc(a.education)}</p><h3>Work experience</h3><p class="pre">${esc(a.experience)}</p><h3>Strengths</h3><p class="pre">${esc(a.skills)}</p><a class="btn" href="#/contact/va">Work with me</a></div></section>`},
 services(){return `<section class="s" style="border:0"><h1>VA services</h1>${svc(D.services)}</section>`},
 portfolio(){return `<section class="s" style="border:0"><h1>Portfolio</h1><p>Real projects are labeled as real. Demonstration samples are made to show my skills and are not client work.</p><div class="grid">${D.projects.map(projectCard).join('')}</div></section>`},
-shop(t){t=t||'all';const l=D.products.filter(p=>t==='all'||p.type===t);const cats=[...new Set(l.map(p=>p.category))];return `<section class="s" style="border:0"><h1>Jjang Digitals by Rose</h1><p>Planners, calendars, templates and more, made by Annie Rose.</p>
+shop(t){t=t||'all';const S=D.shop||{};const l=D.products.filter(p=>t==='all'||p.type===t);const cats=[...new Set(l.map(p=>p.category))];return `<section class="s" style="border:0">${D.site.banner?`<img class="banner" src="${esc(D.site.banner)}" alt="" onerror="this.remove()">`:''}${D.site.logo?`<img class="shoplogo" src="${esc(D.site.logo)}" alt="Jjang Digitals by Rose" onerror="this.remove()">`:''}<h1>Jjang Digitals by Rose</h1><p style="font-size:1.15rem">${esc(S.tagline||'Planners, calendars, templates and more, made by Annie Rose.')}</p>${S.category?`<p class="tag">${esc(S.category)}</p>`:''}${S.story?`<p><a href="#/shop/${t}" onclick="event.preventDefault();document.getElementById('story').scrollIntoView({behavior:'smooth'})">Why “Jjang”? Read the story</a></p>`:''}
 <div class="tabs">${['all','digital','physical'].map(x=>`<a class="${x===t?'on':''}" href="#/shop/${x}">${x==='all'?'All products':x[0].toUpperCase()+x.slice(1)+' products'}</a>`).join('')}</div>
-${l.length?cats.map(c=>`<h3>${esc(c)}</h3><div class="grid" style="margin-bottom:32px">${l.filter(p=>p.category===c).map(productCard).join('')}</div>`).join(''):'<p>No products here yet.</p>'}</section>`},
+${l.length?cats.map(c=>`<h3>${esc(c)}</h3><div class="grid" style="margin-bottom:32px">${l.filter(p=>p.category===c).map(productCard).join('')}</div>`).join(''):'<p>No products here yet.</p>'}</section>${S.story?`<section class="s shopband" id="story" style="margin:0 -20px;padding:64px 20px"><div class="two"><div><div class="glyph" lang="ko">짱</div><p class="tag">Jjang means “the best” or “awesome” in Korean.</p></div><div><h2>The story behind the name</h2><p class="pre">${esc(S.story)}</p>${S.products?`<h3>What you’ll find</h3><p class="chips">${S.products.split('|').map(x=>x.trim()).filter(Boolean).map(x=>`<span>${esc(x)}</span>`).join('')}</p>`:''}</div></div></section>`:''}`},
 product(id){const p=find(id);if(!p)return V.notfound();const v=vars(p),phys=p.type==='physical',out=phys&&Number(p.stock)<=0;
  let buy;
  if(!phys)buy=p.gumroadUrl?`<a class="btn shop gumroad-button" href="${esc(p.gumroadUrl)}" target="_blank" rel="noopener">Buy on Gumroad</a><p class="tag" style="margin-top:8px">Secure payment and file delivery are handled by Gumroad.</p>`:`<span class="btn shop off">Purchase link coming soon</span>`;
  else buy=out?`<span class="btn off">Sold out</span>`:`<label>${v.length?'Option':''}</label>${v.length?`<select id="var">${v.map(x=>`<option>${esc(x)}</option>`).join('')}</select>`:''}<label>Quantity</label><input id="q" type="number" min="1" max="${Number(p.stock)}" value="1" style="width:100px"><p class="tag">${Number(p.stock)} in stock</p><button class="btn shop" id="add">Add to cart</button>`;
- return `<section class="s two" style="border:0"><div class="pd">${tile(p)}</div><div><a href="#/shop/${p.type}">Back to ${p.type} products</a><h1 style="margin-top:12px">${esc(p.title)}</h1><p class="price">${php(p.price)}</p><p>${esc(p.description)}</p><h3>Details</h3><p>${esc(p.details)}</p>${buy}</div></section>`},
+ return `<section class="s two" style="border:0"><div class="pd">${tile(p)}</div><div><a href="#/shop/${p.type}">Back to ${p.type} products</a><h1 style="margin-top:12px">${esc(p.title)}</h1><p class="price">${php(p.price)}</p><p>${esc(p.description)}</p><h3>Details</h3><p class="pre">${esc(p.details)}</p>${buy}</div></section>`},
 cart(){if(!cart.length)return `<section class="s" style="border:0"><h1>Your cart</h1><p>Your cart is empty.</p><a class="btn shop" href="#/shop/physical">Browse physical products</a></section>`;
  const sub=cart.reduce((a,c)=>a+c.qty*find(c.id).price,0);
  return `<section class="s" style="border:0"><h1>Your cart</h1><table>${cart.map((c,i)=>{const p=find(c.id);return `<tr><td>${esc(p.title)}<br><span class="tag">${esc(c.variant)}</span></td><td><span class="qty"><button data-m="${i}" aria-label="Less">−</button>${c.qty}<button data-p="${i}" aria-label="More">+</button></span></td><td>${php(p.price*c.qty)}</td><td><button class="btn alt" data-r="${i}">Remove</button></td></tr>`}).join('')}</table>
  <h3 style="margin-top:20px">Subtotal: ${php(sub)}</h3><p class="tag">Shipping is not included. I will confirm it with you.</p>
  <h2 style="margin-top:32px">Send order request</h2><div class="note">This sends an order request only. Your order is not confirmed until I reply with payment instructions.</div>
  <form class="f" id="co"><label>Name</label><input name="n" required><label>Mobile number</label><input name="ph" required><label>Delivery address</label><textarea name="a" rows="3" required></textarea><label>Notes</label><textarea name="no" rows="2"></textarea><p></p><button class="btn shop">Send order request by email</button></form></section>`},
-contact(t){const o={va:'VA services',digital:'Digital product questions',physical:'Physical product orders',collab:'Business collaboration'};return `<section class="s" style="border:0"><h1>Contact</h1><p class="links">${links()}</p>
+contact(t){const o={va:'VA services',digital:'Digital product questions',physical:'Physical product orders',collab:'Business collaboration'};return `<section class="s" style="border:0"><h1>Contact</h1><p class="links">${links()}</p>${D.site.linktreeQr?`<div style="margin:16px 0"><img src="${esc(D.site.linktreeQr)}" alt="Linktree QR code" style="width:160px;height:160px"><p class="tag">Scan to open my Linktree</p></div>`:''}
 <form class="f" id="ct"><label>What is this about?</label><select name="t">${Object.entries(o).map(([k,v])=>`<option value="${k}" ${k===t?'selected':''}>${v}</option>`).join('')}</select><label>Name</label><input name="n" required><label>Your email</label><input type="email" name="e" required><label>Message</label><textarea name="m" rows="5" required></textarea><p></p><button class="btn">Send by email</button></form>${D.site.email?'':'<div class="note">Email is not set yet, so the form is disabled. Add your email in the admin dashboard.</div>'}</section>`},
 notfound(){return `<section class="s"><h1>Page not found</h1><a href="#/home">Back to home</a></section>`}
 };
